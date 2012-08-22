@@ -1,2 +1,2 @@
-nms
+Node Music Streamer
 ===
