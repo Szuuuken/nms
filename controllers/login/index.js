@@ -5,7 +5,7 @@ exports.view =  function(req, res){
     req.session.success = 'Authenticated as ' + req.session.user.name
       + ' click to <a href="/logout">logout</a>. '
       + ' You may now access <a href="/restricted">/restricted</a>.';
-    res.redirect('/restricted');
+    res.redirect('/main');
   }
   res.render('login');
 };

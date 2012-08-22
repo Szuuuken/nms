@@ -10,7 +10,6 @@
     "swig": "*",
     "stylus": "*",
     "mysql":  "2.0.0-alpha3",
-    "connect-redis": "*",
     "consolidate" : "*"
   }
 }
