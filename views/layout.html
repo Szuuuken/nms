@@ -11,7 +11,7 @@
     <title>Node Music Streamer</title>
   </head>
   <body>
-    <div id='navbar'><em id='title'>{{ navbar.title }}</em></div>
+    <div id='navbar'><em id='title'>{{ navbar.title }}</em> <ul>{% for entry in navbar.entries%}<li> <a class='navlinks' href='{{ entry.link }}'>{{ entry.text }}</a> </li>{%endfor%} </ul></div>
     {% block body %}{% endblock %}
   </body>
 </html>

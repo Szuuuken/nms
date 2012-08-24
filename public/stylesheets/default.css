@@ -26,9 +26,29 @@ div#navbar
 div#navbar #title
 	{
 	  color : white;
-	  padding-left: 1em;
-	  padding-top: 0.2em;
+	  padding-left: 0.5em;
+	  padding-top: 0em;
 	  position: absolute;
-	  font-size: 2em;
+	  font-size: 2.5em;
 	  font-weight: bold;
+	}
+div#navbar .navlinks
+	{
+	 color : white;
+	 font-weight:bold;
+	}
+
+div#navbar ul
+	{
+	 list-style-type:none;
+	 margin:0;
+	 padding:0;
+	 position: relative;
+	 left: 7em;
+	 top: 1.2em;
+	}
+
+div#navbar li
+	{
+	 display:inline;
 	}

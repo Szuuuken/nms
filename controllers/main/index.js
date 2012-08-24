@@ -6,7 +6,7 @@ exports.view = function(req, res){
     var entry1 = {text : 'home',link:'/home'};
     var entry2 = {text : 'logout',link:'/logout'};
     var entries = [entry1,entry2];
-    var navbar = {title : 'nms',entries: entries};
-    res.render('main',{navbar : navbar});
+    var navbar = {navbar : {title : 'nms',entries: entries}};
+    res.render('main',navbar);
   });
 };
