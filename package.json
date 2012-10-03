@@ -1,5 +1,5 @@
 {
-  "name": "application-name",
+  "name": "nms",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -7,9 +7,12 @@
   },
   "dependencies": {
     "express": "3.0.0rc1",
-    "swig": "*",
-    "stylus": "*",
+    "swig": "0.12.0",
+    "stylus": "0.29.0",
     "mysql":  "2.0.0-alpha3",
-    "consolidate" : "*"
+    "consolidate" : "0.4.0",
+    "tracklist" : "0.1.0",
+    "zippy":"0.0.3",
+    "hashish":"0.0.4"
   }
 }

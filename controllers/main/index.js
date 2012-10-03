@@ -1,4 +1,5 @@
 var auth = require('../../lib/auth/auth');
+var music = require('../../lib/music/music');
 
 exports.view = function(req, res){
   auth.restrict(req,res,function(){
@@ -6,7 +7,12 @@ exports.view = function(req, res){
     var entry1 = {text : 'home',link:'/home'};
     var entry2 = {text : 'logout',link:'/logout'};
     var entries = [entry1,entry2];
-    var navbar = {navbar : {title : 'nms',entries: entries}};
-    res.render('main',navbar);
+
+    var navbar = {title : 'nms',entries: entries};
+    var tracks = music.getTracks();
+
+    var render = {render : {navbar:navbar, tracks:tracks}};
+    console.log(render);
+    res.render('main',render);
   });
 };

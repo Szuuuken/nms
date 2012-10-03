@@ -2,6 +2,7 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , auth = require('./lib/auth/auth')
+  , music = require('./lib/music/music')
   , cons = require('consolidate')
   , swig = require("swig");
 
@@ -27,6 +28,8 @@ app.configure('development', function(){
 });
 
 require('./lib/boot/boot')(app, { verbose: !module.parent });
+
+music.scanDirectory('/var/music');
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

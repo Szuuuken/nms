@@ -5,5 +5,11 @@
 {% endblock %}
 
 {% block body %}
-	Main View!
+	<ul>
+	{% for track in render.tracks %}
+    		<li{% if loop.index <= 0 %} class="first"{% endif %}>{{ track }}</li>
+	{% else %}
+    		<li>There are no tracks.</li>
+	{% endfor %}
+	</ul>
 {% endblock %}

@@ -7,7 +7,7 @@ exports.view =  function(req, res){
       + ' You may now access <a href="/restricted">/restricted</a>.';
     res.redirect('/main');
   }
-  res.render('login',{navbar : {title:'nms'}});
+  res.render('login',{render:{navbar : {title:'nms'}}});
 };
 
 
