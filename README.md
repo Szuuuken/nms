@@ -1,6 +1,6 @@
 Node Music Streamer
 ===
-A html5 music streaming aplication.
+A html5 music streaming application.
 
 TODO:
 ===
