@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+{% endblock %}
+
+{% block body %}
+
+<audio controls>
+  <source src={{ track.url }} type="audio/mp3">
+Your browser does not support the audio element.
+</audio>
+{% endblock %}

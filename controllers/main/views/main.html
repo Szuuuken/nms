@@ -7,7 +7,7 @@
 {% block body %}
 	<ul>
 	{% for track in render.tracks %}
-    		<li{% if loop.index <= 0 %} class="first"{% endif %}>{{ track }}</li>
+    		<li{% if loop.index <= 0 %} class="first"{% endif %}>{{ track.name }} - {{ track.artist }} <a href=player/{{ track.sha1 }} >play</a></li>
 	{% else %}
     		<li>There are no tracks.</li>
 	{% endfor %}
