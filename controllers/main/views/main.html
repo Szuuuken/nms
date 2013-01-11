@@ -4,12 +4,20 @@
 <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
 {% endblock %}
 
+{% block js %}
+<script src="js/player.js"></script>
+{% endblock %}
+
 {% block body %}
 	<ul>
 	{% for track in render.tracks %}
-    		<li{% if loop.index <= 0 %} class="first"{% endif %}>{{ track.name }} - {{ track.artist }} <a href=player/{{ track.sha1 }} >play</a></li>
+    		<li{% if loop.index <= 0 %} class="first"{% endif %}>{{ track.name }} - {{ track.artist }} <button id={{ track.sha1 }} onClick="addTrackToPlayer(this)">Add</button> </li>
 	{% else %}
     		<li>There are no tracks.</li>
 	{% endfor %}
 	</ul>
+
+	<audio id='mainPlayer' preload="auto" controls="controls">
+		Your browser does not support the audio element.
+	</audio>
 {% endblock %}
