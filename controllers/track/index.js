@@ -6,7 +6,6 @@ exports.show = function(req, res){
   auth.restrict(req,res,function(){
 	var trackId = req.route.params.track_id;
 	music.getTrackByHash(trackId,function(track){
-		console.log(track.path);
  		var filename = track.path;
  		
 		var response = res;

@@ -10,9 +10,8 @@ exports.view = function(req, res){
 
     var navbar = {title : 'nms',entries: entries};
     var tracks = music.getTracks();
-
     var render = {render : {navbar:navbar, tracks:tracks}};
-    console.log(render);
+
     res.render('main',render);
   });
 };
