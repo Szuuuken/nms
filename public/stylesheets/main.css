@@ -16,4 +16,8 @@
 .audiojs .scrubber {
    width: 91.2%
 }
-	
+
+select[multiple] {
+    height: 300px;
+    width: 320px;
+}

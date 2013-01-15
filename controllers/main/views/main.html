@@ -2,16 +2,57 @@
 
 {% block css %}
 <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 {% endblock %}
 
 {% block js %}
 <script src="js/audiojs/audio.min.js"></script>
 <script src="js/player.js"></script>
+
+<script>
+  $(function() {
+    $( "#resizable" ).resizable();
+  });
+</script>
+
 {% endblock %}
 
 {% block body %}
-<div id="wrap">
- <div class="container">
+
+<div class="container">
+	<div class="row" id="resizable">
+		<div class="span4"><p>Genre</p></div>
+		<div class="span4"><p>Artist</p></div>
+		<div class="span4"><p>Album</p></div>
+		<div class="span4">
+			<select multiple="multiple">
+  			<option>1</option>
+  			<option>2</option>
+  			<option>3</option>
+  			<option>4</option>
+  			<option>5</option>
+			</select>
+		</div>
+
+		<div class="span4">
+			<select multiple="multiple">
+  			<option>1</option>
+  			<option>2</option>
+  			<option>3</option>
+  			<option>4</option>
+  			<option>5</option>
+		</select></div>
+
+		<div class="span4">
+			<select multiple="multiple">
+                        <option>1</option>
+                        <option</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                </select></div>
+	</div>
 	<ul>
 	{% for track in render.tracks %}
     		<li{% if loop.index <= 0 %} class="first"{% endif %}>{{ track.name }} - {{ track.artist }} <button id={{ track.sha1 }} onClick="addTrackToPlayer(this,'{{ track.name }} - {{ track.artist }}')">Add</button> </li>
@@ -20,9 +61,6 @@
 	{% endfor %}
 	</ul>
 </div>
-<div id="push"></div>
-</div>		
-
 <div id="footer">
 	<ol id='tracklist'></ol>
         <audio id='mainPlayer' preload="auto"></audio>
