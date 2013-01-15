@@ -6,19 +6,18 @@
 
 {% block body %}
 <div id='login'>
+
+ <form method="post" class="form-inline" action="/login">
  <h2>Login</h1>
- <form method="post" action="/login">
   <p>
-    <label>Username:</label>
-    <input type="text" name="username">
+    <input type="text" name="username" placeholder="Username">
   </p>
   <p>
-    <label>Password:</label>
-    <input type="password" name="password">
+    <input type="password" name="password" placeholder="Password">
   </p>
   <p>
-    <input type="submit" value="Login">
-    <input type="checkbox" name="rememberMe" value="remember">Remember Me
+    <input class="btn btn-primary" type="submit" value="Login">
+    <label class="checkbox"><input type="checkbox" name="rememberMe" value="remember"> Remember Me</label>
   </p>
  </form>
 </div>

@@ -20,6 +20,7 @@ exports.create = function(req, res){
                 req.session.cookie.expires = false;
         }
         res.redirect('/main');
+	res.end();
       });
     } else {
       req.session.error = 'Authentication failed, please check your '

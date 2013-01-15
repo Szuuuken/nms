@@ -5,19 +5,23 @@
 {% endblock %}
 
 {% block js %}
+<script src="js/audiojs/audio.min.js"></script>
 <script src="js/player.js"></script>
 {% endblock %}
 
 {% block body %}
 	<ul>
 	{% for track in render.tracks %}
-    		<li{% if loop.index <= 0 %} class="first"{% endif %}>{{ track.name }} - {{ track.artist }} <button id={{ track.sha1 }} onClick="addTrackToPlayer(this)">Add</button> </li>
+    		<li{% if loop.index <= 0 %} class="first"{% endif %}>{{ track.name }} - {{ track.artist }} <button id={{ track.sha1 }} onClick="addTrackToPlayer(this,'{{ track.name }} - {{ track.artist }}')">Add</button> </li>
 	{% else %}
     		<li>There are no tracks.</li>
 	{% endfor %}
 	</ul>
 
-	<audio id='mainPlayer' preload="auto" controls="controls">
+	<div id='wrapper'>
+	<audio id='mainPlayer' preload="auto">
 		Your browser does not support the audio element.
-	</audio>
+	</audio> 
+	<ol id='tracklist'></ol
+	</div>
 {% endblock %}

@@ -4,7 +4,8 @@ var express = require('express')
   , auth = require('./lib/auth/auth')
   , music = require('./lib/music/music')
   , cons = require('consolidate')
-  , swig = require("swig");
+  , swig = require("swig")
+  , RedisStore = require('connect-redis')(express);
 
 var app = express();
 
@@ -16,8 +17,14 @@ app.configure(function(){
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
-  app.use(express.cookieParser('lalala'));
-  app.use(express.session({cookie: { maxAge: 60 * 60 * 1000 }}));
+  app.use(express.cookieParser('keyboard cat'));
+
+  //app.use(express.session({store: new RedisStore({host: cfg.redis.host,db: cfg.redis.db,ttl: 30}), secret: 'foobar'}));
+  //app.use(express.session({ store: new RedisStore({host:'127.0.0.1', port:6380, prefix:'chs-sess'}), secret: 'lolcat' }));
+  //app.use(express.session({ store: new RedisStore, secret: 'lolcat'}));
+  //app.use(express.session({store: new RedisStore, secret: 'lolcat',cookie: { maxAge: 60 * 60 * 1000 }}));
+  //app.use(express.session({secret: 'lalala',store: new RedisStore,cookie: {maxAge:86400000 },key:'sid'}));
+  app.use(express.session({ store: new RedisStore }));
   app.use(app.router);
   app.use(require('stylus').middleware(__dirname + '/public'));
   app.use(express.static(path.join(__dirname, 'public')));
