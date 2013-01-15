@@ -21,3 +21,8 @@ select[multiple] {
     height: 300px;
     width: 320px;
 }
+
+.ui-resizable {
+    width : 985px;
+    height: 335px;
+}

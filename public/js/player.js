@@ -1,6 +1,28 @@
 var as;
 var audio;
 
+function resize(){
+	var resizeDiv = $( "#resizable" );
+	resizeDiv.resizable();
+	var width = 985;
+	resizeDiv.resizable( "option", "maxWidth" ,width);
+	resizeDiv.resizable( "option", "minWidth",width);
+	
+	resizeDiv.on("resize",function(e,ui){
+		var genres = $("#genres");
+		var artists = $("#artists");
+		var albums = $("#albums");
+
+		var divWidth = $(this).width();
+		var divHeight= $(this).height() - 35;
+		
+		genres.height(divHeight);
+		artists.height(divHeight);
+		albums.height(divHeight);
+	});
+}
+
+
 function addTrackToPlayer(button,desc){
 	var player = $("#tracklist");
 	player.append("<li><a href='#' data-src=\"track/" + button.id + "\" type=\"audio/mpeg\">"+desc+"</a></li>");

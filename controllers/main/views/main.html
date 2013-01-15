@@ -9,13 +9,7 @@
 {% block js %}
 <script src="js/audiojs/audio.min.js"></script>
 <script src="js/player.js"></script>
-
-<script>
-  $(function() {
-    $( "#resizable" ).resizable();
-  });
-</script>
-
+<script>$(function(){resize();});</script>
 {% endblock %}
 
 {% block body %}
@@ -26,7 +20,7 @@
 		<div class="span4"><p>Artist</p></div>
 		<div class="span4"><p>Album</p></div>
 		<div class="span4">
-			<select multiple="multiple">
+			<select id="genres" multiple="multiple">
   			<option>1</option>
   			<option>2</option>
   			<option>3</option>
@@ -36,7 +30,7 @@
 		</div>
 
 		<div class="span4">
-			<select multiple="multiple">
+			<select id="artists" multiple="multiple">
   			<option>1</option>
   			<option>2</option>
   			<option>3</option>
@@ -45,7 +39,7 @@
 		</select></div>
 
 		<div class="span4">
-			<select multiple="multiple">
+			<select id="albums" multiple="multiple">
                         <option>1</option>
                         <option</option>
                         <option>3</option>
