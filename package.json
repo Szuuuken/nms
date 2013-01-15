@@ -11,8 +11,8 @@
     "stylus": "*",
     "mysql":  "*",
     "consolidate" : "*",
-    "tracklist" : "*",
-    "zippy":"*",
-    "hashish":"*"
+    "connect-redis" : "*",
+    "mediainfo" : "*",
+    "readdirp" : "*"
   }
 }
