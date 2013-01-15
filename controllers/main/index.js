@@ -6,11 +6,12 @@ exports.view = function(req, res){
 
     var entry1 = {text : 'home',link:'/home'};
     var entry2 = {text : 'logout',link:'/logout'};
-    var entries = [entry1,entry2];
+    var entries = [entry1];
+    var entriesRight = [entry2]
 
-    var navbar = {title : 'nms',entries: entries};
+    var navbar = {title : 'nms',entries: entries,entriesRight:entriesRight};
     var tracks = music.getTracks();
-    var render = {render : {navbar:navbar, tracks:tracks}};
+    var render = {render : {navbar:navbar, tracks:tracks,showNavBar:true}};
 
     res.render('main',render);
   });

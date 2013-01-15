@@ -1,0 +1,19 @@
+#footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   width:100%;
+}
+
+.audiojs {
+   width:100%
+}
+
+.audiojs .time { 
+   float: right;
+}
+
+.audiojs .scrubber {
+   width: 91.2%
+}
+	

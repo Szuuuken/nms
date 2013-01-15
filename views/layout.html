@@ -12,8 +12,19 @@
 
     <title>Node Music Streamer</title>
   </head>
-  <body>
-    <div id='navbar'><em id='title'>{{ render.navbar.title }}</em> <ul>{% for entry in render.navbar.entries%}<li> <a class='navlinks' href='{{ entry.link }}'>{{ entry.text }}</a> </li>{%endfor%} </ul></div>
+  <body> {% if (render.showNavBar == true) %} 
+	<div class="navbar navbar-static-top navbar-inverse">
+  		<div class="navbar-inner">
+    			<a class="brand" href="#">{{ render.navbar.title }}</a>
+    			<ul class="nav pull-left">
+				{% for entry in render.navbar.entries%}<li> <a class='navlinks' href='{{ entry.link }}'> {{ entry.text }}</a> </li>{%endfor%}
+    			</ul>
+			<ul class="nav pull-right">
+				{% for entry in render.navbar.entriesRight%}<li> <a class='navlinks' href='{{ entry.link }}' >{{ entry.text }}</a> </li>{%endfor%}
+			</ul>
+  		</div>
+	</div>
+	{% endif %}
     {% block body %}{% endblock %}
   </body>
 </html>

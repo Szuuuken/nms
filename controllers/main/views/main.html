@@ -10,6 +10,8 @@
 {% endblock %}
 
 {% block body %}
+<div id="wrap">
+ <div class="container">
 	<ul>
 	{% for track in render.tracks %}
     		<li{% if loop.index <= 0 %} class="first"{% endif %}>{{ track.name }} - {{ track.artist }} <button id={{ track.sha1 }} onClick="addTrackToPlayer(this,'{{ track.name }} - {{ track.artist }}')">Add</button> </li>
@@ -17,11 +19,13 @@
     		<li>There are no tracks.</li>
 	{% endfor %}
 	</ul>
+</div>
+<div id="push"></div>
+</div>		
 
-	<div id='wrapper'>
-	<audio id='mainPlayer' preload="auto">
-		Your browser does not support the audio element.
-	</audio> 
-	<ol id='tracklist'></ol
-	</div>
+<div id="footer">
+	<ol id='tracklist'></ol>
+        <audio id='mainPlayer' preload="auto"></audio>
+      </div>
+</div>
 {% endblock %}
