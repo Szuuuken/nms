@@ -21,11 +21,7 @@
 		<div class="span4"><p>Album</p></div>
 		<div class="span4">
 			<select id="genres" multiple="multiple">
-  			<option>1</option>
-  			<option>2</option>
-  			<option>3</option>
-  			<option>4</option>
-  			<option>5</option>
+			{% for genre in render.genres%} <option> {{ genre.name }} </option> {% endfor %}
 			</select>
 		</div>
 

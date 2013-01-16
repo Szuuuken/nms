@@ -10,8 +10,12 @@ exports.view = function(req, res){
     var entriesRight = [entry2]
 
     var navbar = {title : 'nms',entries: entries,entriesRight:entriesRight};
+
+    var genres = music.getGenres();
+    var artists = music.getArtists();
+    var albums = music.getAlbums();
     var tracks = music.getTracks();
-    var render = {render : {navbar:navbar, tracks:tracks,showNavBar:true}};
+    var render = {render : {navbar:navbar,genres:genres,artists:artists,albums:albums,tracks:tracks,showNavBar:true}};
 
     res.render('main',render);
   });
