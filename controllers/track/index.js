@@ -15,4 +15,10 @@ exports.show = function(req, res){
 		res.sendfile(track.path);
 	});
   });
-};
+}
+
+exports.list = function(req,res){
+	auth.restrict(req,res,function(){
+		res.json(music.getTracks());
+	});
+}

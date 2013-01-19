@@ -21,26 +21,21 @@
 		<div class="span4"><p>Album</p></div>
 		<div class="span4">
 			<select id="genres" multiple="multiple">
-			{% for genre in render.genres %} <option> {{ genre.name }} </option> {% endfor %}
+			<option>All</option>
+			{% for genre in render.genres %} <option genreId="{{genre.id}}"> {{ genre.name }} </option> {% endfor %}
 			</select>
 		</div>
 
 		<div class="span4">
 			<select id="artists" multiple="multiple">
-  			<option>1</option>
-  			<option>2</option>
-  			<option>3</option>
-  			<option>4</option>
-  			<option>5</option>
+			<option>All</option>
+			{% for artist in render.artists %} <option artistId="{{artist.id}}"> {{ artist.name }} </option> {% endfor %}
 		</select></div>
 
 		<div class="span4">
 			<select id="albums" multiple="multiple">
-                        <option>1</option>
-                        <option</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+			<option>All</option>
+			{% for album in render.albums %} <option albumId="{{album.id}}"> {{ album.name }} </option> {% endfor %}
                 </select></div>
 	</div>
 	<ul>
