@@ -1,5 +1,79 @@
 var as;
 var audio;
+var genres;
+var artists;
+var ablums;
+var tracks;
+
+function init(){
+	resize();
+	initEvents();
+	loadInformations();
+}
+
+function initEvents(){
+	$('#genres').change(function(){
+		var genreId = parseInt($(this).val());
+	
+		var filterdArtists = artists.filter(function(index){
+			if($.inArray(genreId,index.genres) > -1){
+				return index;
+			}
+		});
+		
+		var filterdAlbums = albums.filter(function(index){
+			if($.inArray(genreId,index.genres) > -1){
+				return index;
+			}
+		});
+
+		var filterdTracks = tracks.filter(function(index){
+			if($.inArray(genreId,index.genres) > -1){
+				return index;
+			}
+		});
+	});
+
+	$('#artists').change(function(){
+		//console.log($(this).val());
+		$(this).children().eq(this.selectedIndex).appendTo('#hidden');
+	}); 
+
+	$('#albums').change(function(){
+		console.log($(this).val());
+	}); 
+}
+
+function loadInformations(){
+	loadGenres();
+	loadArtists();
+	loadAlbums();
+	loadTracks();
+}
+
+function loadGenres(){
+	var GenreLoader = $.getJSON("/genres", function (data){
+		genres = data.genres;
+	});
+}
+
+function loadArtists(){
+	var ArtistsLoader = $.getJSON("/artists", function (data){
+		artists = data.artists;
+	});
+}
+
+function loadAlbums(){
+	var AlbumsLoader = $.getJSON("/albums", function (data){
+		albums = data.albums;
+	});
+}
+
+function loadTracks(){
+	var TracksLoader = $.getJSON("/tracks", function (data){
+		tracks = data.tracks;
+	});
+}
 
 function resize(){
 	var resizeDiv = $( "#resizable" );

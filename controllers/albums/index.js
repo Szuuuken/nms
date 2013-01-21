@@ -3,6 +3,6 @@ var music = require('../../lib/music/music');
 
 exports.view = function(req, res){
   auth.restrict(req,res,function(){
-    res.json(music.getAlbums());
+    res.json({albums:music.getAlbums()});
   });
 };

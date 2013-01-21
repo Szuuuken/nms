@@ -19,6 +19,6 @@ exports.show = function(req, res){
 
 exports.list = function(req,res){
 	auth.restrict(req,res,function(){
-		res.json(music.getTracks());
+		res.json({tracks: music.getTracks()});
 	});
 }

@@ -26,3 +26,7 @@ select[multiple] {
     width : 985px;
     height: 335px;
 }
+
+#hidden {
+    display : none;
+}
