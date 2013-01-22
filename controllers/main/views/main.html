@@ -38,13 +38,22 @@
 			{% for album in render.albums %} <option value="{{album.id}}"> {{ album.name }} </option> {% endfor %}
                 </select></div>
 	</div>
-	<ul>
+	<table id="songs" class="table table-striped table-condensed">
+		<tr>
+			<th>Song</th>
+			<th>Artist</th>
+			<th>Add</th>
+		</tr>
 	{% for track in render.tracks %}
-    		<li{% if loop.index <= 0 %} class="first"{% endif %}>{{ track.name }} - {{ track.artist }} <button id={{ track.sha1 }} onClick="addTrackToPlayer(this,'{{ track.name }} - {{ track.artist }}')">Add</button> </li>
+		<tr>
+    			<td>{{ track.name }}</td>
+			<td>{{ track.artist.name }}</td> 
+			<td><button id={{ track.sha1 }} onClick="addTrackToPlayer(this,'{{ track.name }} - {{ track.artist.name }}')">Add</button> </td>
+		</tr>
 	{% else %}
     		<li>There are no tracks.</li>
 	{% endfor %}
-	</ul>
+	</table>
 </div>
 <div id="footer">
 	<ol id='tracklist'></ol>
