@@ -2,6 +2,10 @@ Node Music Streamer
 ===
 A html5 music streaming application.
 
+Discussion
+===
+A platform (http://szuuuken.titanpad.com/1) to disscuss, ideas,implenantations, errors, tests, or anything related to nms.
+
 TODO:
 ===
 * almost everything
