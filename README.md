@@ -4,7 +4,7 @@ A html5 music streaming application.
 
 Discussion
 ===
-A platform (http://szuuuken.titanpad.com/1) to disscuss, ideas,implenantations, errors, tests, or anything related to nms.
+A platform (https://szuuuken.titanpad.com/nms) to disscuss, ideas,implenantations, errors, tests, or anything related to nms.
 
 TODO:
 ===
